@@ -1,0 +1,44 @@
+/*
+Theme Name:   Sadhaka Child
+Description:  Astra child theme for the Sadhaka spiritual content site.
+Template:     astra
+Version:      1.0.0
+Text Domain:  sadhaka-child
+*/
+
+/* --- Sadhaka custom styles --- */
+
+.sadhaka-quote {
+	border-left: 3px solid #b8860b;
+	padding: 1rem 1.5rem;
+	background: #faf7f0;
+	font-style: italic;
+	border-radius: 0 8px 8px 0;
+}
+
+.sadhaka-quote cite {
+	display: block;
+	margin-top: 0.5rem;
+	font-style: normal;
+	font-size: 0.9em;
+	color: #6b5b3e;
+}
+
+.sadhaka-practices {
+	list-style: none;
+	padding: 0;
+}
+
+.sadhaka-practice {
+	padding: 0.75rem 0;
+	border-bottom: 1px solid #eee;
+}
+
+.sadhaka-practice-badge {
+	font-size: 0.8em;
+	background: #eef3ee;
+	color: #3e5b3e;
+	padding: 0.15rem 0.5rem;
+	border-radius: 999px;
+	margin-left: 0.5rem;
+}

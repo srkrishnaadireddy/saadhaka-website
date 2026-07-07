@@ -1,0 +1,9 @@
+# Only custom code is versioned; WordPress core, third-party plugins/themes,
+# uploads and config live on the server / in backups.
+*.log
+.DS_Store
+Thumbs.db
+node_modules/
+vendor/
+wp-config.php
+wp-content/uploads/
