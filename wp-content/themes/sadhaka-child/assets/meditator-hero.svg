@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="sky" cx="50%" cy="60%" r="90%">
+      <stop offset="0%" stop-color="#343438"/>
+      <stop offset="50%" stop-color="#202023"/>
+      <stop offset="100%" stop-color="#121213"/>
+    </radialGradient>
+    <radialGradient id="glowOuter" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f2c069" stop-opacity="0.30"/>
+      <stop offset="60%" stop-color="#e8a94f" stop-opacity="0.11"/>
+      <stop offset="100%" stop-color="#e8a94f" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowInner" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffe3a3" stop-opacity="0.5"/>
+      <stop offset="55%" stop-color="#f2c069" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#f2c069" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="72%" stop-color="#ffd98c" stop-opacity="0"/>
+      <stop offset="87%" stop-color="#ffd98c" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#ffd98c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#121213" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0b0b0c"/>
+    </linearGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <filter id="softer" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="26"/>
+    </filter>
+  </defs>
+
+  <!-- dark grey backdrop -->
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+
+  <!-- faint stars -->
+  <g fill="#d8d4c8">
+    <circle cx="180" cy="140" r="1.6" opacity="0.35"/>
+    <circle cx="420" cy="260" r="1.1" opacity="0.25"/>
+    <circle cx="310" cy="520" r="1.4" opacity="0.22"/>
+    <circle cx="640" cy="120" r="1.2" opacity="0.3"/>
+    <circle cx="1180" cy="150" r="1.5" opacity="0.32"/>
+    <circle cx="1320" cy="300" r="1.1" opacity="0.22"/>
+    <circle cx="1520" cy="200" r="1.6" opacity="0.35"/>
+    <circle cx="1700" cy="380" r="1.2" opacity="0.25"/>
+    <circle cx="1780" cy="120" r="1.3" opacity="0.3"/>
+    <circle cx="90" cy="420" r="1.4" opacity="0.28"/>
+    <circle cx="980" cy="90" r="1.3" opacity="0.28"/>
+    <circle cx="240" cy="720" r="1.2" opacity="0.18"/>
+    <circle cx="1620" cy="560" r="1.1" opacity="0.18"/>
+    <circle cx="1860" cy="500" r="1.2" opacity="0.25"/>
+  </g>
+
+  <!-- rays of radiance -->
+  <g stroke="#f2c069" stroke-width="3" opacity="0.045">
+    <line x1="960" y1="660" x2="960" y2="-80" transform="rotate(0 960 660)"/>
+    <line x1="960" y1="660" x2="960" y2="-80" transform="rotate(30 960 660)"/>
+    <line x1="960" y1="660" x2="960" y2="-80" transform="rotate(60 960 660)"/>
+    <line x1="960" y1="660" x2="960" y2="-80" transform="rotate(90 960 660)"/>
+    <line x1="960" y1="660" x2="960" y2="-80" transform="rotate(120 960 660)"/>
+    <line x1="960" y1="660" x2="960" y2="-80" transform="rotate(150 960 660)"/>
+    <line x1="960" y1="660" x2="960" y2="-80" transform="rotate(180 960 660)"/>
+    <line x1="960" y1="660" x2="960" y2="-80" transform="rotate(210 960 660)"/>
+    <line x1="960" y1="660" x2="960" y2="-80" transform="rotate(240 960 660)"/>
+    <line x1="960" y1="660" x2="960" y2="-80" transform="rotate(270 960 660)"/>
+    <line x1="960" y1="660" x2="960" y2="-80" transform="rotate(300 960 660)"/>
+    <line x1="960" y1="660" x2="960" y2="-80" transform="rotate(330 960 660)"/>
+  </g>
+
+  <!-- radiance -->
+  <circle cx="960" cy="660" r="540" fill="url(#glowOuter)"/>
+  <circle cx="960" cy="660" r="310" fill="url(#glowInner)"/>
+  <circle cx="960" cy="560" r="200" fill="url(#halo)" filter="url(#soft)"/>
+
+  <!-- golden rim light behind figure -->
+  <g filter="url(#softer)" opacity="0.55">
+    <circle cx="960" cy="500" r="52"/>
+    <g fill="#f2c069">
+      <circle cx="960" cy="500" r="52"/>
+      <path d="M930,556 C884,566 852,586 840,610 C826,636 820,672 818,706 C816,734 809,754 796,768 C758,772 716,784 694,806 C672,826 668,844 688,856 L1232,856 C1252,844 1248,826 1226,806 C1204,784 1162,772 1124,768 C1111,754 1104,734 1102,706 C1100,672 1094,636 1080,610 C1068,586 1036,566 990,556 Z"/>
+    </g>
+  </g>
+
+  <!-- meditator silhouette: upright spine, hands in dhyana mudra, padmasana -->
+  <g fill="#131316">
+    <!-- hair bun -->
+    <circle cx="960" cy="446" r="15"/>
+    <!-- head -->
+    <circle cx="960" cy="500" r="50"/>
+    <!-- body: shoulders, arms to lap, crossed legs -->
+    <path d="M932,548
+             C886,560 854,582 842,608
+             C830,634 824,670 822,704
+             C820,732 813,752 800,766
+             C762,772 720,784 698,806
+             C676,826 672,844 692,856
+             L1228,856
+             C1248,844 1244,826 1222,806
+             C1200,784 1158,772 1120,766
+             C1107,752 1100,732 1098,704
+             C1096,670 1090,634 1078,608
+             C1066,582 1034,560 988,548
+             Z"/>
+    <!-- knees: wide padmasana base -->
+    <path d="M692,856 C700,830 740,808 800,796 C850,786 900,782 960,782 C1020,782 1070,786 1120,796 C1180,808 1220,830 1228,856 Z"/>
+    <!-- hands resting in lap (dhyana mudra) -->
+    <ellipse cx="960" cy="762" rx="52" ry="18"/>
+  </g>
+
+  <!-- ground fade + seat glow -->
+  <rect y="850" width="1920" height="230" fill="url(#ground)"/>
+  <ellipse cx="960" cy="866" rx="380" ry="24" fill="#f2c069" opacity="0.07" filter="url(#soft)"/>
+</svg>
