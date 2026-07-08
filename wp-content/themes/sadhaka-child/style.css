@@ -2,7 +2,7 @@
 Theme Name:   Sadhaka Child
 Description:  Astra child theme for the Sadhaka spiritual content site.
 Template:     astra
-Version:      1.0.0
+Version:      1.1.0
 Text Domain:  sadhaka-child
 */
 
@@ -41,4 +41,81 @@ Text Domain:  sadhaka-child
 	padding: 0.15rem 0.5rem;
 	border-radius: 999px;
 	margin-left: 0.5rem;
+}
+
+/* --- Homepage: hero --- */
+
+.sadhaka-hero {
+	background: linear-gradient(180deg, #faf7f0 0%, #f5efe2 100%);
+	padding: 5rem 1.5rem;
+	text-align: center;
+}
+
+.sadhaka-hero .sadhaka-eyebrow {
+	text-transform: uppercase;
+	letter-spacing: 0.25em;
+	font-size: 0.85rem;
+	color: #b8860b;
+	margin-bottom: 1.5rem;
+}
+
+.sadhaka-hero .sadhaka-quote {
+	border: none;
+	background: transparent;
+	padding: 0;
+	max-width: 740px;
+	margin: 0 auto;
+	font-size: 1.7rem;
+	line-height: 1.6;
+	color: #3d3526;
+}
+
+.sadhaka-hero .sadhaka-quote cite {
+	margin-top: 1.25rem;
+	font-size: 0.95rem;
+	color: #8a7a55;
+}
+
+/* --- Homepage: blog section --- */
+
+.sadhaka-blog-section {
+	padding: 4rem 1.5rem;
+}
+
+.sadhaka-blog-section h2 {
+	text-align: center;
+	margin-bottom: 0.5rem;
+}
+
+.sadhaka-blog-section .sadhaka-section-sub {
+	text-align: center;
+	color: #8a7a55;
+	margin-bottom: 2.5rem;
+}
+
+.sadhaka-blog-section .wp-block-latest-posts.is-grid li {
+	background: #fff;
+	border: 1px solid #efe9db;
+	border-radius: 10px;
+	padding: 1.25rem;
+	transition: box-shadow 0.2s ease;
+}
+
+.sadhaka-blog-section .wp-block-latest-posts.is-grid li:hover {
+	box-shadow: 0 6px 18px rgba(139, 106, 32, 0.12);
+}
+
+.sadhaka-blog-section .wp-block-latest-posts__featured-image img {
+	border-radius: 6px;
+}
+
+.sadhaka-blog-section .wp-block-latest-posts__post-title {
+	font-size: 1.15rem;
+	font-weight: 600;
+	color: #3d3526;
+}
+
+.sadhaka-blog-section .wp-block-latest-posts__post-date {
+	color: #a09274;
+	font-size: 0.85rem;
 }
