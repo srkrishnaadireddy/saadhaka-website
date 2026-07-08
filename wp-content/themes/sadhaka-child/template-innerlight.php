@@ -24,7 +24,7 @@ defined( 'ABSPATH' ) || exit;
 			flex-direction: column;
 			justify-content: space-between;
 			overflow-x: hidden;
-			background: radial-gradient(circle at 50% 40%, #131c27 0%, #0b0f14 70%) #0b0f14 !important;
+			background: radial-gradient(circle at 50% 42%, #171d26 0%, #10151c 45%, #0b0f14 75%) #0b0f14 !important;
 		}
 		body.innerlight-page *,
 		body.innerlight-page *::before,
@@ -109,8 +109,8 @@ defined( 'ABSPATH' ) || exit;
 			position: relative;
 			z-index: 2;
 			display: block;
-			-webkit-mask-image: radial-gradient(ellipse 68% 75% at 50% 50%, #000 55%, transparent 96%);
-			mask-image: radial-gradient(ellipse 68% 75% at 50% 50%, #000 55%, transparent 96%);
+			-webkit-mask-image: radial-gradient(ellipse 52% 62% at 50% 50%, #000 30%, transparent 72%);
+			mask-image: radial-gradient(ellipse 52% 62% at 50% 50%, #000 30%, transparent 72%);
 		}
 		body.innerlight-page .aura-glow {
 			position: absolute;
