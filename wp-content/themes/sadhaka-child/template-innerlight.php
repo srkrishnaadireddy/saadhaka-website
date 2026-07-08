@@ -320,9 +320,8 @@ defined( 'ABSPATH' ) || exit;
 			<div class="aura-glow"></div>
 			<img class="meditation-img" src="<?php echo esc_url( content_url( '/uploads/2026/07/Home_Page_Img01-scaled.png' ) ); ?>" alt="" fetchpriority="high" />
 		</div>
-		<div class="il-sloka-sa">स्वस्ति प्रजाभ्यः परिपालयन्तां<br>न्यायेन मार्गेण महीं महीशाः ।<br>गोब्राह्मणेभ्यः शुभमस्तु नित्यं<br>लोकाः समस्ताः सुखिनो भवन्तु ॥</div>
-		<div class="il-sloka-om">ॐ शान्तिः शान्तिः शान्तिः ॥</div>
-		<p class="il-sloka-en">May there be well-being for all people; may the rulers govern the earth along the righteous path; may there be auspiciousness forever for cows and the wise; may all the worlds be happy. Om, peace, peace, peace.</p>
+		<div class="il-sloka-sa">ॐ सर्वे भवन्तु सुखिनः<br>सर्वे सन्तु निरामयाः<br>सर्वे भद्राणि पश्यन्तु<br>मा कश्चिद्दुःखभाग्भवेत्<br>ॐ शान्तिः शान्तिः शान्तिः</div>
+		<p class="il-sloka-en">Oṃ, may all beings be happy, may all be free from illness, may all witness auspiciousness, may no one suffer from sorrow. Oṃ, peace, peace, peace.</p>
 	</main>
 
 	<?php
