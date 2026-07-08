@@ -174,6 +174,91 @@ defined( 'ABSPATH' ) || exit;
 		}
 		body.innerlight-page .cta-btn:active { transform: translateY(0); }
 
+		body.innerlight-page .il-quotes {
+			width: 100%;
+			overflow: hidden;
+			padding: 3rem 0 4rem;
+		}
+		body.innerlight-page .il-quotes h2 {
+			text-align: center;
+			font-size: 1.4rem;
+			font-weight: 300;
+			letter-spacing: 4px;
+			color: #ffffff;
+			text-transform: uppercase;
+			margin: 0 0 0.6rem;
+		}
+		body.innerlight-page .il-quotes .il-quotes-sub {
+			text-align: center;
+			font-size: 0.9rem;
+			color: #94a3b8;
+			font-weight: 300;
+			letter-spacing: 1px;
+			margin: 0 0 2.5rem;
+		}
+		body.innerlight-page .il-quotes-track {
+			display: flex;
+			width: max-content;
+			animation: il-marquee 60s linear infinite;
+		}
+		body.innerlight-page .il-quotes-track:hover {
+			animation-play-state: paused;
+		}
+		body.innerlight-page .il-quotes-set {
+			display: flex;
+			gap: 24px;
+			padding-right: 24px;
+		}
+		body.innerlight-page .il-quote-card {
+			width: 340px;
+			flex-shrink: 0;
+			background: rgba(255, 255, 255, 0.04);
+			border: 1px solid rgba(255, 255, 255, 0.08);
+			border-radius: 16px;
+			padding: 1.8rem 1.8rem 1.5rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			transition: border-color 0.3s ease, background 0.3s ease;
+		}
+		body.innerlight-page .il-quote-card:hover {
+			border-color: rgba(226, 180, 103, 0.35);
+			background: rgba(255, 255, 255, 0.06);
+		}
+		body.innerlight-page .il-quote-mark {
+			font-size: 2rem;
+			line-height: 1;
+			color: #e2b467;
+			opacity: 0.7;
+			font-family: Georgia, serif;
+		}
+		body.innerlight-page .il-quote-text {
+			font-size: 1rem;
+			color: #d7dee8;
+			line-height: 1.7;
+			font-weight: 300;
+			letter-spacing: 0.3px;
+			margin: 0.6rem 0 1.2rem;
+			font-style: italic;
+		}
+		body.innerlight-page .il-quote-cite {
+			font-size: 0.8rem;
+			color: #e2b467;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
+		body.innerlight-page .il-quote-cite span {
+			color: #94a3b8;
+			text-transform: none;
+			letter-spacing: 0.5px;
+		}
+		@media (max-width: 768px) {
+			body.innerlight-page .il-quote-card { width: 270px; }
+		}
+		@keyframes il-marquee {
+			from { transform: translateX(0); }
+			to { transform: translateX(-50%); }
+		}
 		body.innerlight-page .il-footer {
 			padding: 2rem;
 			text-align: center;
@@ -226,6 +311,50 @@ defined( 'ABSPATH' ) || exit;
 		<p>A simple guide to mindfulness and cultivating inner peace through meditation. Explore pristine techniques to quiet the mind and connect with your inner radiance.</p>
 		<a class="cta-btn" href="<?php echo esc_url( home_url( '/practices/' ) ); ?>">Start Meditating</a>
 	</main>
+
+	<?php
+	$sadhaka_quotes = new WP_Query(
+		array(
+			'post_type'      => 'sadhaka_quote',
+			'posts_per_page' => 20,
+			'orderby'        => 'rand',
+			'no_found_rows'  => true,
+		)
+	);
+	if ( $sadhaka_quotes->have_posts() ) :
+		$il_marquee_secs = max( 30, $sadhaka_quotes->post_count * 12 );
+		?>
+	<section class="il-quotes" aria-label="Quotes">
+		<h2>Words of Wisdom</h2>
+		<p class="il-quotes-sub">Timeless words for the path</p>
+		<div class="il-quotes-track" style="animation-duration: <?php echo esc_attr( $il_marquee_secs ); ?>s;">
+			<?php for ( $il_set = 0; $il_set < 2; $il_set++ ) : ?>
+			<div class="il-quotes-set"<?php echo ( 1 === $il_set ) ? ' aria-hidden="true"' : ''; ?>>
+				<?php
+				while ( $sadhaka_quotes->have_posts() ) :
+					$sadhaka_quotes->the_post();
+					$il_author = get_post_meta( get_the_ID(), 'quote_author', true );
+					$il_source = get_post_meta( get_the_ID(), 'quote_source', true );
+					?>
+				<div class="il-quote-card">
+					<div>
+						<div class="il-quote-mark">&#10077;</div>
+						<p class="il-quote-text"><?php echo esc_html( wp_strip_all_tags( get_the_content() ) ); ?></p>
+					</div>
+					<?php if ( $il_author ) : ?>
+					<div class="il-quote-cite">&mdash; <?php echo esc_html( $il_author ); ?><?php if ( $il_source ) : ?><span>, <?php echo esc_html( $il_source ); ?></span><?php endif; ?></div>
+					<?php endif; ?>
+				</div>
+				<?php endwhile; ?>
+				<?php $sadhaka_quotes->rewind_posts(); ?>
+			</div>
+			<?php endfor; ?>
+		</div>
+	</section>
+	<?php
+	wp_reset_postdata();
+	endif;
+	?>
 
 	<footer class="il-footer">
 		<p>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> Saadhaka. <a href="<?php echo esc_url( home_url( '/privacy/' ) ); ?>">Privacy</a> | <a href="<?php echo esc_url( home_url( '/terms/' ) ); ?>">Terms</a></p>
