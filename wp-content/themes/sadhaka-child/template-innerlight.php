@@ -11,6 +11,7 @@ defined( 'ABSPATH' ) || exit;
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<?php wp_head(); ?>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;500&display=swap" rel="stylesheet">
 	<style>
 		html { scroll-behavior: smooth; }
 		body.innerlight-page {
@@ -129,24 +130,36 @@ defined( 'ABSPATH' ) || exit;
 			z-index: 2;
 		}
 
-		body.innerlight-page .il-main h1 {
-			font-size: 2.8rem;
+		body.innerlight-page .il-sloka-sa {
+			font-family: 'Noto Serif Devanagari', Georgia, serif;
+			font-size: 1.55rem;
 			font-weight: 400;
-			letter-spacing: 5px;
-			color: #ffffff;
-			margin: 0 0 1.2rem;
-			text-transform: uppercase;
-			text-shadow: 0 2px 15px rgba(0,0,0,0.5);
-			font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+			color: #f3e8d3;
+			line-height: 2.1;
+			max-width: 760px;
+			margin: 0 auto 0.6rem;
+			text-shadow: 0 0 24px rgba(226, 180, 103, 0.25);
 		}
-		body.innerlight-page .il-main p {
-			font-size: 1.05rem;
+		body.innerlight-page .il-sloka-om {
+			font-family: 'Noto Serif Devanagari', Georgia, serif;
+			font-size: 1.25rem;
+			color: #e2b467;
+			margin: 0 0 1.8rem;
+			letter-spacing: 3px;
+		}
+		body.innerlight-page .il-sloka-en {
+			font-size: 1rem;
 			color: #94a3b8;
-			line-height: 1.8;
-			max-width: 580px;
-			margin: 0 0 3rem;
+			line-height: 1.9;
+			max-width: 620px;
+			margin: 0 auto 3rem;
 			font-weight: 300;
 			letter-spacing: 0.5px;
+			font-style: italic;
+		}
+		@media (max-width: 768px) {
+			body.innerlight-page .il-sloka-sa { font-size: 1.15rem; line-height: 1.9; }
+			body.innerlight-page .il-sloka-en { font-size: 0.9rem; }
 		}
 		body.innerlight-page .cta-btn {
 			display: inline-block;
@@ -307,9 +320,9 @@ defined( 'ABSPATH' ) || exit;
 			<div class="aura-glow"></div>
 			<img class="meditation-img" src="<?php echo esc_url( content_url( '/uploads/2026/07/Home_Page_Img01-scaled.png' ) ); ?>" alt="" fetchpriority="high" />
 		</div>
-		<h1>Find Your Calm.</h1>
-		<p>A simple guide to mindfulness and cultivating inner peace through meditation. Explore pristine techniques to quiet the mind and connect with your inner radiance.</p>
-		<a class="cta-btn" href="<?php echo esc_url( home_url( '/practices/' ) ); ?>">Start Meditating</a>
+		<div class="il-sloka-sa">स्वस्ति प्रजाभ्यः परिपालयन्तां<br>न्यायेन मार्गेण महीं महीशाः ।<br>गोब्राह्मणेभ्यः शुभमस्तु नित्यं<br>लोकाः समस्ताः सुखिनो भवन्तु ॥</div>
+		<div class="il-sloka-om">ॐ शान्तिः शान्तिः शान्तिः ॥</div>
+		<p class="il-sloka-en">May there be well-being for all people; may the rulers govern the earth along the righteous path; may there be auspiciousness forever for cows and the wise; may all the worlds be happy. Om, peace, peace, peace.</p>
 	</main>
 
 	<?php
